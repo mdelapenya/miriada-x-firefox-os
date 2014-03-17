@@ -17,6 +17,13 @@ body {
 .wrapper-new h2 {
 }
 
+.wrapper-new .datetime {
+	font-family: "Courier New", "Times New Roman";
+	left: 0;
+	margin-bottom: 20px;
+	top: 0;
+}
+
 .wrapper-new .cuerpo {
 	font-size: 1.3em;
 }
