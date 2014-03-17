@@ -1,0 +1,41 @@
+body {
+	color: #4e4e4e;
+	font-family: Arial,Helvetica,Verdana,sans-serif;
+}
+
+.wrapper-new {
+
+}
+
+.wrapper-new a {
+	color: #00f;
+}
+
+.wrapper-new h1 {
+}
+
+.wrapper-new h2 {
+}
+
+.wrapper-new .cuerpo {
+	font-size: 1.3em;
+}
+
+.wrapper-new .fecha {
+	color: #a52a2a;
+	font-style: italic;
+}
+
+.wrapper-new .page {
+	background-color: #f00;
+	color: #ffffff;
+}
+
+.wrapper-new .seccion {
+	margin: 5px 0 10px;
+	color: #4e4e4e;
+	font: 400 17px 'Titillium Web', sans-serif;
+	padding: 10px;
+	background: #f3f3f3;
+	border-bottom: none;
+}
