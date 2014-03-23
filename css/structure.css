@@ -1,0 +1,6 @@
+div.structure {
+	background: url('../img/back01.png') left top repeat-x, url('../img/back02.png') left 69% no-repeat, url('../img/back03.png') left bottom repeat-x;
+	background-color: #a4d3ff;
+
+	height: 300px;	
+}
