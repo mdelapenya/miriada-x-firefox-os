@@ -47,7 +47,12 @@ div .wrapper-fonts {
 	src: url(../fonts/fira-sans/FiraSansOT-RegularItalic.otf);
 }
 
-.wrapper-fonts .firefox {
+.wrapper-fonts .firefox-firamono {
+	font-family: FiraMono-Regular, serif;
+}
+
+.wrapper-fonts .firefox-firasans {
+	font-family: FiraSans-Regular, serif;
 }
 
 .wrapper-fonts .google {
