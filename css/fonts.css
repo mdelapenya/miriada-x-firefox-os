@@ -2,6 +2,51 @@ div .wrapper-fonts {
 
 }
 
+@font-face {
+	font-family: FiraMono-Regular;
+	src: url(../fonts/fira-mono/FiraMonoOT-Regular.otf);
+}
+@font-face {
+	font-family: FiraMono-Bold; 
+	src: url(../fonts/fira-mono/FiraMonoOT-Bold.otf);
+}
+
+@font-face {
+	font-family: FiraSans-Bold;
+	src: url(../fonts/fira-sans/FiraSansOT-Bold.otf);
+}
+@font-face {
+	font-family: FiraSans-BoldItalic;
+	src: url(../fonts/fira-sans/FiraSansOT-BoldItalic.otf);
+}
+
+@font-face {
+	font-family: FiraSans-Light;
+	src: url(../fonts/fira-sans/FiraSansOT-Light.otf);
+}
+@font-face {
+	font-family: FiraSans-LightItalic;
+	src: url(../fonts/fira-sans/FiraSansOT-LigthItalic.otf);
+}
+
+@font-face {
+	font-family: FiraSans-Medium;
+	src: url(../fonts/fira-sans/FiraSansOT-Medium.otf);
+}
+@font-face {
+	font-family: FiraSans-MediumItalic;
+	src: url(../fonts/fira-sans/FiraSansOT-MediumItalic.otf);
+}
+
+@font-face {
+	font-family: FiraSans-Regular;
+	src: url(../fonts/fira-sans/FiraSansOT-Regular.otf);
+}
+@font-face {
+	font-family: FiraSans-RegularItalic;
+	src: url(../fonts/fira-sans/FiraSansOT-RegularItalic.otf);
+}
+
 .wrapper-fonts .firefox {
 }
 
