@@ -1,6 +1,10 @@
 div.structure {
-	background: url('../img/back01.png') left top repeat-x, url('../img/back02.png') left 69% no-repeat, url('../img/back03.png') left bottom repeat-x;
+	background: url('../img/back01.png') left top repeat-x, url('../img/back02.png') left 78% no-repeat, url('../img/back03.png') left bottom repeat-x;
 	background-color: #a4d3ff;
-
-	height: 300px;	
+	border: 5px solid #C00;
+	border-radius: 10px;
+	height: 300px;
+	margin: 20px;
+	padding: 20px;
+	width: 600px;
 }
