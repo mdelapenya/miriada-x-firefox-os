@@ -3,6 +3,7 @@ div.structure {
 	background-color: #a4d3ff;
 	border: 5px solid #C00;
 	border-radius: 10px;
+	box-shadow: 10px 10px 10px #C00;
 	height: 300px;
 	margin: 20px;
 	padding: 20px;
