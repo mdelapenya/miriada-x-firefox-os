@@ -3,6 +3,12 @@ function closeTag(tag) {
 }
 
 function drawTag(tag, content) {
+	var type = typeof content;
+
+	if (type === "object" || type === "function") {
+		content = "No es imprimible";
+	}
+
 	return openTag(tag) + content + closeTag(tag);
 }
 
