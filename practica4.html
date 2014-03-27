@@ -3,19 +3,22 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Propiedades de un Objeto</title>
+		<link rel="stylesheet" type="text/css" href="css/table.css">
 		<script src="js/practica04.js"></script>
 	</head>
 	<body>
-		<h1 id="title"></h1>
-		<div id="divWrapper"></div>
-		<script>
-			var divWrapper = document.getElementById("divWrapper");
-			var title = document.getElementById("title");
+		<div>
+			<h1 id="title"></h1>
+			<div id="divWrapper"></div>
+			<script>
+				var divWrapper = document.getElementById("divWrapper");
+				var title = document.getElementById("title");
 
-			var result = requestObject();
+				var result = requestObject();
 
-			title.innerHTML = result.title;
-			divWrapper.innerHTML = result.html;
-		</script>
+				title.innerHTML = result.title;
+				divWrapper.innerHTML = result.html;
+			</script>
+		</div>
 	</body>
 </html>
