@@ -63,12 +63,18 @@ function processAttributes(attributes) {
 function requestObject() {
 	var requestedObject = prompt("Indique el nombre de algún objeto JavaScript de la página actual:");
 
-	var o = window[requestedObject];
+	var o = {};
 
-	if (!o) {
+	o.self = window[requestedObject];
+
+	if (!o.self) {
 		return "El objeto referenciado NO existe";
 	}
 	else {
-		return printObject(o); 
+		o.title = requestedObject;
+
+		o.html = printObject(o.self); 
+
+		return o;
 	}
 }
