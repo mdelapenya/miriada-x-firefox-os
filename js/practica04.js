@@ -66,15 +66,14 @@ function requestObject() {
 	var o = {};
 
 	o.self = window[requestedObject];
+	o.title = requestedObject;
 
 	if (!o.self) {
-		return "El objeto referenciado NO existe";
+		o.html = "El objeto referenciado NO existe";
 	}
 	else {
-		o.title = requestedObject;
-
 		o.html = printObject(o.self); 
-
-		return o;
 	}
+
+	return o;
 }
