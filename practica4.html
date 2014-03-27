@@ -6,9 +6,16 @@
 		<script src="js/practica04.js"></script>
 	</head>
 	<body>
+		<h1 id="title"></h1>
+		<div id="divWrapper"></div>
 		<script>
-			var o = requestObject();
-			document.writeln(o);
+			var divWrapper = document.getElementById("divWrapper");
+			var title = document.getElementById("title");
+
+			var result = requestObject();
+
+			title.innerHTML = result.title;
+			divWrapper.innerHTML = result.html;
 		</script>
 	</body>
 </html>
