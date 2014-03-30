@@ -1,4 +1,5 @@
 var END_TOKEN = "Acabar";
+var FOR_LOOP = 1;
 var QUESTION = "Introduzca un número para acumular una suma. Introduzca 'Acabar' para realizar la suma.\n";
 var WHILE_LOOP = 2;
 
@@ -7,8 +8,22 @@ var suma = {
 	total: 0
 };
 
+function forLoop() {
+	var mensaje = QUESTION;
+	var answer = "";
+
+	for (answer = prompt(mensaje); answer !== END_TOKEN; answer = prompt(_generarMensaje())) {
+		_evaluarRespuesta(answer);
+	}
+
+	return _toHTML();
+}
+
 function main(mode) {
-	if (mode === WHILE_LOOP) {
+	if (mode === FOR_LOOP) {
+		return forLoop();
+	}
+	else if (mode === WHILE_LOOP) {
 		return whileLoop();
 	}
 	else {
@@ -20,9 +35,7 @@ function whileLoop() {
 	var answer = prompt(QUESTION);
 
 	while (answer !== END_TOKEN) {
-		if (answer == parseInt(answer)) {
-			suma.sumandos.push(answer);
-		}
+		_evaluarRespuesta(answer);
 
 		var mensaje = _generarMensaje();
 
@@ -30,6 +43,12 @@ function whileLoop() {
 	}
 
 	return _toHTML();
+}
+
+function _evaluarRespuesta(answer) {
+	if (answer == parseInt(answer)) {
+		suma.sumandos.push(answer);
+	}
 }
 
 function _generarMensaje() {
