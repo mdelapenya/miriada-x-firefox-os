@@ -66,6 +66,11 @@ function requestObject() {
 	var o = {};
 
 	o.self = window[requestedObject];
+
+	if (requestedObject === "this") {
+		o.self = window;
+	}
+
 	o.title = requestedObject;
 
 	if (!o.self) {
