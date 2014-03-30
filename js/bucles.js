@@ -20,15 +20,21 @@ function forLoop() {
 }
 
 function main(mode) {
+	var resultElement = document.getElementById("result");
+	
+	var result = "";
+
 	if (mode === FOR_LOOP) {
-		return forLoop();
+		result = forLoop();
 	}
 	else if (mode === WHILE_LOOP) {
-		return whileLoop();
+		result = whileLoop();
 	}
 	else {
-		return "Invalid mode";
+		result = "Invalid mode";
 	}
+
+	resultElement.innerHTML = result;
 }
 
 function whileLoop() {
