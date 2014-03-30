@@ -20,6 +20,8 @@ function forLoop() {
 }
 
 function main(mode) {
+	_reset();
+
 	var resultElement = document.getElementById("result");
 	
 	var result = "";
@@ -76,6 +78,11 @@ function _generarMensaje() {
 	mensaje += "= " + suma.total;
 
 	return mensaje;
+}
+
+function _reset() {
+	suma.sumandos = [];
+	suma.total = 0;
 }
 
 function _toHTML() {
