@@ -39,7 +39,7 @@ var initialize = function() {
 
 	clock._divClock = div;
 
-	div.onclick = clock.toggle;
+	div.addEventListener("click", clock.toggle);
 
 	div.style.cursor= "pointer";
 }
