@@ -18,6 +18,9 @@ function check() {
 	}
 	else {
 		result = "Su respuesta  " + answer + "  no es correcta";
+
+		inputAnswer.placeholder = "Pruebe otra vez";
+		inputAnswer.value = "";
 	}
 
 	var divResult = document.getElementById("resultado");
