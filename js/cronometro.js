@@ -1,5 +1,6 @@
 var crono = {
 	_cl: $("#crono"),
+	_stops: $("#stops"),
 	_intervalId: undefined,
 
 	arrancar:function() {
@@ -20,6 +21,8 @@ var crono = {
 	},
 
 	parar:function() {
+		crono._stops.append((crono._cl.html() + "</br>"));
+
 		clearInterval(crono._intervalId);
 
 		crono._intervalId = undefined;
