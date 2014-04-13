@@ -32,7 +32,9 @@ var initialize = function() {
 	$("#btnInicializar").on(
 		"click",
 		function() {
-			crono._cl.html("0.0");
+			if (crono._intervalId === undefined) {
+				crono._cl.html("0.0");
+			}
 		}
 	);
 }
