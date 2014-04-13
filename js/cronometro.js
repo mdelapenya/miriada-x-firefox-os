@@ -37,6 +37,8 @@ var initialize = function() {
 		function() {
 			if (crono._intervalId === undefined) {
 				crono._cl.html("0.0");
+
+				crono._stops.html("");
 			}
 		}
 	);
