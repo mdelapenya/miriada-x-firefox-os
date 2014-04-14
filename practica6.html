@@ -56,10 +56,12 @@
 				$("#btnInicializar").on(
 					"click",
 					function() {
-						localStorage.c = "0.0";
-						localStorage.stops = "";
-						stops.html(localStorage.stops);
-						mostrar();
+						if (t === undefined) {
+							localStorage.c = "0.0";
+							localStorage.stops = "";
+							stops.html(localStorage.stops);
+							mostrar();
+						}
 					}
 				);
 			});
