@@ -8,17 +8,35 @@
 				color: #333333;
 			}
 
-			h3.tactil {
-				background-color: #ff8800;
-				color: #ffffff;
-				padding: 5px;
+			#cronoBackground {
+				background: url('img/crono.png') no-repeat 0 0;
+				height: 1065px;
+			}
+				
+			div.buttons {
+				left: 270px;
+				position: relative;
+				top: 115px;
+				z-index: 200;
+			}
+
+			div.tactil {
 				border-radius: 5px;
+				color: #ffffff;
+				font-size: 5em;
+				left: 0px;
+				padding: 5px;
+				position: relative;
+				text-align: right;
+				top: 440px;
+				width: 580px;
 			}
 
 			#stops {
 				border: 2px solid #ff8800;
 				padding: 5px;
 				border-radius: 5px;
+				z-index: 100;
 			}
 
 			#stops h4 {
@@ -93,12 +111,16 @@
 	<body>
 		<h2>Cronómetro</h2>
 
-		<h3 class="tactil">
-			<span id="crono">0.0</span> segundos
-		</h3>
+		<div id="cronoBackground">
+			<div class="tactil">
+				<span id="crono">0.0</span>
+			</div>
 
-		<button id="btnCambiar">Arrancar / Parar</button>
-		<button id="btnInicializar">Inicializar</button>
+			<div class="buttons">
+				<button id="btnCambiar">Arrancar / Parar</button>
+				<button id="btnInicializar">Inicializar</button>
+			</div>
+		</div>
 
 		<div id="stops">
 			<h4>Paradas Realizadas:</h4>
