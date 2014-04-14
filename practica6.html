@@ -50,20 +50,17 @@
 					}
 				};
 
+				function inicializar() {
+					if (t === undefined) {
+						localStorage.c = "0.0";
+						localStorage.stops = "";
+						stops.html(localStorage.stops);
+						mostrar();
+					}
+				};
 
 				$("#btnCambiar").on("click", cambiar);
-
-				$("#btnInicializar").on(
-					"click",
-					function() {
-						if (t === undefined) {
-							localStorage.c = "0.0";
-							localStorage.stops = "";
-							stops.html(localStorage.stops);
-							mostrar();
-						}
-					}
-				);
+				$("#btnInicializar").on("click", inicializar);
 			});
 		</script>
 	</head>
