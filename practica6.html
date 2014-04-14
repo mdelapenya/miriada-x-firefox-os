@@ -61,13 +61,17 @@
 
 				$("#btnCambiar").on("click", cambiar);
 				$("#btnInicializar").on("click", inicializar);
+
+				var tactil = $(".tactil");
+				tactil.on("tap", cambiar);
+				tactil.on("swipe", inicializar);
 			});
 		</script>
 	</head>
 	<body>
 		<h2>Cronómetro</h2>
 
-		<h3>
+		<h3 class="tactil">
 			<span id="crono">0.0</span> segundos
 		</h3>
 
