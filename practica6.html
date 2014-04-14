@@ -3,6 +3,28 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Práctica 6</title>
+		<style type="text/css">
+			body {
+				color: #333333;
+			}
+
+			h3.tactil {
+				background-color: #ff8800;
+				color: #ffffff;
+				padding: 5px;
+				border-radius: 5px;
+			}
+
+			#stops {
+				border: 2px solid #ff8800;
+				padding: 5px;
+				border-radius: 5px;
+			}
+
+			#stops h4 {
+				text-transform: uppercase; 
+			}
+		</style>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.3/zepto.min.js"></script>
 		<script type="text/javascript">
 			$(function() {
@@ -11,7 +33,7 @@
 
 				var t, cl = $("#crono");
 
-				var stops = $("#stops");
+				var stopItems = $("#stopItems");
 
 				function incr() {
 					localStorage.c = +localStorage.c + 0.1;
@@ -38,7 +60,7 @@
 
 					localStorage.stops += localStorage.c + "<br/>";
 
-					stops.html(localStorage.stops);
+					stopItems.html(localStorage.stops);
 				};
 
 				function cambiar() {
@@ -54,7 +76,7 @@
 					if (t === undefined) {
 						localStorage.c = "0.0";
 						localStorage.stops = "";
-						stops.html(localStorage.stops);
+						stopItems.html(localStorage.stops);
 						mostrar();
 					}
 				};
@@ -78,6 +100,9 @@
 		<button id="btnCambiar">Arrancar / Parar</button>
 		<button id="btnInicializar">Inicializar</button>
 
-		<div id="stops"></div>
+		<div id="stops">
+			<h4>Paradas Realizadas:</h4>
+			<div id="stopItems"></div>
+		</div>
 	</body>
 </html>
