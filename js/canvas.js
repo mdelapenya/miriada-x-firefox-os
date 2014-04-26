@@ -39,15 +39,15 @@ function mostrarHora(ctx) {
 
   var timeString = fixTime(h) + ":" + fixTime(m) + ":" + fixTime(s);
 
-  ctx.clearRect(0,0,140,140)  // borrar CANVAS
+  ctx.clearRect(0,0,300,300)  // borrar CANVAS
 
-  drawCircle(ctx,80,80,50,3,"#000000");   // esfera del reloj
+  drawCircle(ctx,100,100,80,3,"#000000");   // esfera del reloj
 
-  drawLine(ctx,80,80,x2(h,12,80,30),y2(h,12,80,30),5,"#eee"); // horas
-  drawLine(ctx,80,80,x2(m,60,80,40),y2(m,60,80,40),3,"#eee"); // min.
-  drawLine(ctx,80,80,x2(s,60,80,50),y2(s,60,80,50),1,"#db4e36"); // seg.
+  drawLine(ctx,100,100,x2(h,12,100,40),y2(h,12,100,40),5,"#eee"); // horas
+  drawLine(ctx,100,100,x2(m,60,100,60),y2(m,60,100,60),3,"#eee"); // min.
+  drawLine(ctx,100,100,x2(s,60,100,80),y2(s,60,100,80),1,"#db4e36"); // seg.
 
-  drawText(ctx, 10, "sans-serif", timeString, 65, 60);
+  drawText(ctx, 15, "sans-serif", timeString, 80, 70);
 }
 
 function x2(n, i, x1, r) {
