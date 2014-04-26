@@ -38,7 +38,7 @@ function mostrarHora(ctx) {
   var s = d.getSeconds();
   var dec = Math.floor(d.getMilliseconds() / 100);
 
-  var timeString = fixTime(h) + ":" + fixTime(m) + ":" + fixTime(s);
+  var timeString = fixTime(h) + ":" + fixTime(m) + ":" + fixTime(s) + ":" + fixTime(dec);
 
   ctx.clearRect(0,0,300,300)  // borrar CANVAS
 
@@ -52,7 +52,7 @@ function mostrarHora(ctx) {
 
   drawLine(ctx,130,130,x2(dec,12,130,20),y2(dec,12,130,20),0.5,"#00b0f6"); // dec.
 
-  drawText(ctx, 15, "sans-serif", timeString, 80, 70);
+  drawText(ctx, 15, "sans-serif", timeString, 80, 60);
 }
 
 function x2(n, i, x1, r) {
