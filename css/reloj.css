@@ -23,9 +23,19 @@ svg line {
 	width: 100%;
 }
 
+#decimas {
+	stroke: #00b0f6;
+	stroke-width: 0.5;
+}
+
 #corona {
 	stroke: #db4e36;
 	stroke-width: 3;
+}
+
+#coronita {
+	stroke: #db4e36;
+	stroke-width: 1;
 }
 
 #horario {

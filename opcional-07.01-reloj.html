@@ -12,7 +12,7 @@
 					function() {
 						mostrarHora()
 					},
-					1000
+					100
 				);
 
 				mostrarHora();
@@ -22,10 +22,12 @@
 	<body>
 		<svg id="relojAnalogico" viewBox="0 0 200 200">
 			<circle id="corona" cx="100" cy="70" r="50" fill="white" />
-			<text id="relojDigital" x="77" y="60"></text>
+			<circle id="coronita" cx="120" cy="90" r="10" fill="white" />
 			<line id="horario" x1="100" y1="70" x2="110" y2="80" />
 			<line id="minutero" x1="100" y1="70" x2="80" y2="40" />
 			<line id="segundero" x1="100" y1="70" x2="115" y2="45" />
+			<line id="decimas" x1="120" y1="90" x2="110" y2="90" />
+			<text id="relojDigital" x="70" y="60"></text>
 		</svg>
 	</body>
 </html>

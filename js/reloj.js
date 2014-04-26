@@ -11,8 +11,13 @@ function mostrarHora() {
 	var hours = date.getHours();
 	var minutes = date.getMinutes();
 	var seconds = date.getSeconds();
+	var decims = Math.floor(date.getMilliseconds() / 100);
 
-	$("#relojDigital").html(fixTime(hours) + ":" + fixTime(minutes) + ":" + fixTime(seconds));
+	$("#relojDigital").html(fixTime(hours) + ":" + fixTime(minutes) + ":" + fixTime(seconds) + ":" + fixTime(decims));
+
+	var decimas = $("#decimas");
+	decimas.attr('x2', x2(decims, 12, 120, 10));
+	decimas.attr('y2', y2(decims, 12, 90, 10));
 
 	var segundero = $("#segundero");
 	segundero.attr('x2', x2(seconds, 60, 100, 50));
