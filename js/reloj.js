@@ -12,7 +12,7 @@ function mostrarHora() {
 	var minutes = date.getMinutes();
 	var seconds = date.getSeconds();
 
-	$("#relojDigital").html(hours + ":" + minutes + ":" + seconds);
+	$("#relojDigital").html(fixTime(hours) + ":" + fixTime(minutes) + ":" + fixTime(seconds));
 
 	var segundero = $("#segundero");
 	segundero.attr('x2', x2(seconds, 60, 100, 50));
@@ -25,4 +25,12 @@ function mostrarHora() {
 	var horario = $("#horario");
 	horario.attr('x2', x2(hours, 12, 100, 30));
 	horario.attr('y2', y2(hours, 12, 70, 30));
+}
+
+function fixTime(time) {
+	if (time < 10) {
+		time = "0" + time;
+	}
+
+	return time;
 }
