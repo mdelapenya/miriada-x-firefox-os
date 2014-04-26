@@ -18,6 +18,11 @@ function drawLine(ctx,x1,y1,x2,y2,width,color) {
   ctx.stroke();              // dibujar linea
 }
 
+function drawText(ctx, pixels, fontFamily, text, top, left) {
+  ctx.font = pixels + "px " + fontFamily;
+  ctx.fillText(text, left, top);
+}
+
 function fixTime(time) {
   if (time < 10) {
     time = "0" + time;
@@ -32,7 +37,7 @@ function mostrarHora(ctx) {
   var m = d.getMinutes();
   var s = d.getSeconds();
 
-  $("#relojDigital").html(fixTime(h) + ":" + fixTime(m) + ":" + fixTime(s));
+  var timeString = fixTime(h) + ":" + fixTime(m) + ":" + fixTime(s);
 
   ctx.clearRect(0,0,140,140)  // borrar CANVAS
 
@@ -41,6 +46,8 @@ function mostrarHora(ctx) {
   drawLine(ctx,80,80,x2(h,12,80,30),y2(h,12,80,30),5,"#eee"); // horas
   drawLine(ctx,80,80,x2(m,60,80,40),y2(m,60,80,40),3,"#eee"); // min.
   drawLine(ctx,80,80,x2(s,60,80,50),y2(s,60,80,50),1,"#db4e36"); // seg.
+
+  drawText(ctx, 10, "sans-serif", timeString, 65, 60);
 }
 
 function x2(n, i, x1, r) {
