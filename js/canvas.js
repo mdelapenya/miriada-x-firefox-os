@@ -36,6 +36,7 @@ function mostrarHora(ctx) {
   var h = d.getHours();
   var m = d.getMinutes();
   var s = d.getSeconds();
+  var dec = Math.floor(d.getMilliseconds() / 100);
 
   var timeString = fixTime(h) + ":" + fixTime(m) + ":" + fixTime(s);
 
@@ -43,9 +44,13 @@ function mostrarHora(ctx) {
 
   drawCircle(ctx,100,100,80,3,"#000000");   // esfera del reloj
 
+  drawCircle(ctx,130,130,20,1,"#000000");   // esfera del decimero
+
   drawLine(ctx,100,100,x2(h,12,100,40),y2(h,12,100,40),5,"#eee"); // horas
   drawLine(ctx,100,100,x2(m,60,100,60),y2(m,60,100,60),3,"#eee"); // min.
   drawLine(ctx,100,100,x2(s,60,100,80),y2(s,60,100,80),1,"#db4e36"); // seg.
+
+  drawLine(ctx,130,130,x2(dec,12,130,20),y2(dec,12,130,20),0.5,"#00b0f6"); // dec.
 
   drawText(ctx, 15, "sans-serif", timeString, 80, 70);
 }
