@@ -1,0 +1,49 @@
+body, html {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	width: 100%;
+	background-color: #eee;
+}
+
+.relojDigitalWrapper {
+	background-color: #db4e36;
+	color: #db4e36;
+	font-family: sans-serif;
+	font-size: 3em;
+	font-weight: bold;
+	text-align: center;
+	padding: 0.5em;
+}
+
+svg line {
+	stroke: grey;
+	stroke-width: 5;
+}
+
+#relojDigital {
+  padding-top: 0.2em;
+  background-color: #FFF;
+}
+
+#relojAnalogico {
+	height: 100%;
+	width: 100%;
+}
+
+#corona {
+	stroke: #db4e36;
+	stroke-width: 3;
+}
+
+#horario {
+	stroke-width: 5;
+}
+
+#minutero {
+	stroke-width: 3;
+}
+
+#segundero {
+	stroke-width: 1;
+}
