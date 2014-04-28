@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Cronómetro</title>
+		<style type="text/css">
+			body {
+				color: #333333;
+			}
+
+			#cronoBackground {
+				background: url('img/crono.png') no-repeat 0 0;
+				height: 1065px;
+			}
+				
+			div.buttons {
+				left: 270px;
+				position: relative;
+				top: 115px;
+				z-index: 200;
+			}
+
+			div.tactil {
+				border-radius: 5px;
+				color: #ffffff;
+				font-size: 5em;
+				left: 0px;
+				padding: 5px;
+				position: relative;
+				text-align: right;
+				top: 440px;
+				width: 580px;
+			}
+
+			#stops {
+				border: 2px solid #ff8800;
+				border-radius: 5px;
+				float: right;
+				padding: 5px;
+				width: 50%;
+				z-index: 100;
+			}
+
+			#stops h4 {
+				text-transform: uppercase; 
+			}
+		</style>
+		<script type="text/javascript" src="js/zepto.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				localStorage.c = (localStorage.c || "0.0");
+				localStorage.stops = (localStorage.stops || "");
+
+				var t, cl = $("#crono");
+
+				var stopItems = $("#stopItems");
+
+				function incr() {
+					localStorage.c = +localStorage.c + 0.1;
+				};
+
+				function mostrar() {
+					cl.html((+localStorage.c).toFixed(1));
+				};
+
+				function arrancar() {
+					t = setInterval(
+							function() {
+								incr();
+								mostrar();
+							},
+							100
+						);
+				};
+
+				function parar() {
+					clearInterval(t);
+
+					t = undefined;
+
+					localStorage.stops += localStorage.c + "<br/>";
+
+					stopItems.html(localStorage.stops);
+				};
+
+				function cambiar() {
+					if (!t) {
+						arrancar();
+					}
+					else {
+						parar();
+					}
+				};
+
+				function inicializar() {
+					if (t === undefined) {
+						localStorage.c = "0.0";
+						localStorage.stops = "";
+						stopItems.html(localStorage.stops);
+						mostrar();
+					}
+				};
+
+				$("#btnCambiar").on("click", cambiar);
+				$("#btnInicializar").on("click", inicializar);
+
+				var tactil = $(".tactil");
+				tactil.on("tap", cambiar);
+				tactil.on("swipe", inicializar);
+			});
+		</script>
+	</head>
+	<body>
+		<h2>Cronómetro</h2>
+
+		<div id="cronoBackground">
+			<div class="tactil">
+				<span id="crono">0.0</span>
+			</div>
+
+			<div class="buttons">
+				<button id="btnCambiar">Arrancar / Parar</button>
+				<button id="btnInicializar">Inicializar</button>
+			</div>
+
+			<div id="stops">
+				<h4>Paradas Realizadas:</h4>
+				<div id="stopItems"></div>
+			</div>
+		</div>
+	</body>
+</html>

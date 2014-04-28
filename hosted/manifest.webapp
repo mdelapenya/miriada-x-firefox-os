@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "name": "Reloj",
+  "description": "Reloj Analógico y Digital",
+  "launch_path": "/cronometro.html",
+  "icons": {
+    "16":  "/img/icon/ico_16.png",
+    "48":  "/img/icon/ico_48.png",
+    "128": "/img/icon/ico_128.png"
+  },
+  "developer": {
+    "name": "Manuel de la Peña",
+    "url": "http://github.com/mdelapenya"
+  }
+}
