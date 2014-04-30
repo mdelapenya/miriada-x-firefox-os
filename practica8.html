@@ -9,12 +9,36 @@
     <script type="text/javascript" src="js/zepto.min.js"></script>
     <script type="text/javascript">
       var map, lat, lng;
+      var markers = [];
 
       $(function() {
         var btnCompactar = $("#btnCompactar");
 
         btnCompactar.on("click", function() {
-          console.log("Clicking button");
+          if (markers.length < 3) {
+            return;
+          }
+
+          var startPoint = markers[0];
+          var endPoint = markers[markers.length - 1];
+
+          map.cleanRoute();
+          map.removeMarkers();
+
+          var startMarker = {lat: startPoint.lat, lng: startPoint.lng};
+
+          map.addMarker(startMarker);
+
+          map.drawRoute({
+            origin: [startPoint.lat, startPoint.lng],
+            destination: [endPoint.lat, endPoint.lng],
+            travelMode: 'driving',
+            strokeColor: '#000000',
+            strokeOpacity: 0.6,
+            strokeWeight: 5
+          });
+
+          map.addMarker({lat: endPoint.lat, lng: endPoint.lng});
         });
 
         function enlazarMarcador(e) {
@@ -24,7 +48,7 @@
             // destino en coordenadas del click o toque actual
             destination: [e.latLng.lat(), e.latLng.lng()],
             travelMode: 'driving',
-            strokeColor: '#000000',
+            strokeColor: '#ff000',
             strokeOpacity: 0.6,
             strokeWeight: 5
           });
@@ -32,7 +56,14 @@
           lat = e.latLng.lat();   // guarda coords para marca siguiente
           lng = e.latLng.lng();
 
-          map.addMarker({ lat: lat, lng: lng});  // pone marcador en mapa
+          var marker = {lat: lat, lng: lng};
+
+          map.addMarker(marker);  // pone marcador en mapa
+
+          marker.lat = lat;
+          marker.lng = lng;
+
+          markers.push(marker);
         };
 
         function geolocalizar() {
@@ -49,7 +80,14 @@
                 tap: enlazarMarcador
               });
 
-              map.addMarker({ lat: lat, lng: lng});  // marcador en [lat, lng]
+              var marker = {lat: lat, lng: lng};
+
+              map.addMarker(marker);  // marcador en [lat, lng]
+
+              marker.lat = lat;
+              marker.lng = lng;
+
+              markers.push(marker);
             },
             error: function(error) {
               alert('Geolocalización falla: '+error.message);
