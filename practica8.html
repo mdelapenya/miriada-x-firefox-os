@@ -11,6 +11,12 @@
       var map, lat, lng;
 
       $(function() {
+        var btnCompactar = $("#btnCompactar");
+
+        btnCompactar.on("click", function() {
+          console.log("Clicking button");
+        });
+
         function enlazarMarcador(e) {
           // muestra ruta entre marcas anteriores y actuales
           map.drawRoute({
@@ -60,6 +66,9 @@
   </head>
   <body>
     <h1>Geolocalización</h1>
+    <div class="buttons">
+      <input id="btnCompactar" type="button" value="Compactar Rutas" />
+    </div>
     <div id="map"></div>
   </body>
 </html>
