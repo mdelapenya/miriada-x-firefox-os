@@ -3,6 +3,8 @@ var markers = [];
 var travelMode = 'driving';
 
 function compactRoutes() {
+  travelMode = $("input[name=rbTravelMode]:checked").val();
+
   if (markers.length < 3) {
     return;
   }
