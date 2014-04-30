@@ -1,5 +1,6 @@
 var map, lat, lng;
 var markers = [];
+var travelMode = 'driving';
 
 function compactRoutes() {
   if (markers.length < 3) {
@@ -19,7 +20,7 @@ function compactRoutes() {
   map.drawRoute({
     origin: [startPoint.lat, startPoint.lng],
     destination: [endPoint.lat, endPoint.lng],
-    travelMode: 'driving',
+    travelMode: travelMode,
     strokeColor: '#000000',
     strokeOpacity: 0.6,
     strokeWeight: 5
@@ -29,12 +30,14 @@ function compactRoutes() {
 }
 
 function enlazarMarcador(e) {
+  travelMode = $("input[name=rbTravelMode]:checked").val();
+
   // muestra ruta entre marcas anteriores y actuales
   map.drawRoute({
     origin: [lat, lng],  // origen en coordenadas anteriores
     // destino en coordenadas del click o toque actual
     destination: [e.latLng.lat(), e.latLng.lng()],
-    travelMode: 'driving',
+    travelMode: travelMode,
     strokeColor: '#ff000',
     strokeOpacity: 0.6,
     strokeWeight: 5
